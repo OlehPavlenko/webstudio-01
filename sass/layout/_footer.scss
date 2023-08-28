@@ -1,93 +1,255 @@
-.list-footer {
-  list-style: none;
-}
 .footer {
+  background-color: $brand-fon;
   padding-top: 60px;
   padding-bottom: 60px;
-  background-color: #2f303a;
 }
-.logo-footer {
+
+////////////////// logo/////////////////////
+.footer__link-logo {
+  font-family: $secondary-font;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
   display: block;
   margin-bottom: 20px;
-
-  font-family: "Raleway";
-  font-weight: bold;
-  font-size: 26px;
-  line-height: calc(31 / 26);
-  letter-spacing: 0.03em;
-  color: var(--accent-text-color);
-}
-.logo-footer-inner {
-  color: var(--hero-text-color);
-}
-.footer-addres {
-  margin-bottom: 9px;
-
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: calc(24 / 14);
-  letter-spacing: 0.03em;
-  color: #ffffff;
-}
-.list-footer__contact {
-  font-size: 14px;
-  line-height: calc(24 / 14);
-  letter-spacing: 0.03em;
-  color: var(--footer-tel-color);
+  color: $brand-white;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   &:hover,
   &:focus {
-    color: var(--accent-text-color);
+    color: $brand-blue;
+  }
+  &:active {
+    color: $brand-blue;
   }
 }
 
-.list-footer__item {
-  margin-left: 0;
+.footer__text-web {
+  color: $brand-blue;
+}
+
+//////////////// footer-adress ///////////////
+.footer-desktop {
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.footer-cont {
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 60px;
+    padding: 0 15px;
+  }
+  @media screen and (min-width: 1200px) {
+    padding: 0;
+    margin-bottom: 0;
+  }
+}
+.foot-adress {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 60px;
+  }
+  @media screen and (min-width: 1200px) {
+    text-align: start;
+    margin-right: 70px;
+    margin-bottom: 0;
+  }
+}
+.footer-adress {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-adress__list {
+  color: $brand-white;
+  cursor: pointer;
+}
+
+.footer-adress__item--adress {
+  font-size: 14px;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--brand-white);
   margin-bottom: 9px;
 }
-.join-text {
-  font-family: Roboto;
+
+.footer-adress__item {
   font-style: normal;
-  font-weight: bold;
+}
+
+.footer-adress__item:not(:last-child) {
+  margin-bottom: 9px;
+}
+
+.footer-adress {
+  &__link-tel,
+  &__link-mail {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+  }
+
+  &__link--adress {
+    color: $brand-white;
+  }
+}
+
+.footer-adress__link--adress {
+  color: var(--brand-white);
+}
+
+.connection {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    color: $brand-blue;
+  }
+}
+////////////// footer-social////////////
+
+.footer-social {
+  margin-bottom: 60px;
+  @media screen and (min-width: 768px) {
+    margin: 0;
+  }
+}
+
+.footer-social__text,
+.footer-input__text {
+  font-weight: 700;
   font-size: 14px;
-  line-height: calc(16 / 14);
+  line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: #ffffff;
-  padding-bottom: 20px;
-}
-.footer-container {
-  display: flex;
-}
-.footer-join {
-  margin-left: 70px;
-}
-.footer-social-media__item {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding-right: 10px;
-}
-.footer-social-media__link {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.1);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover,
-  &:focus {
-    background-color: var(--accent-text-color);
+  color: $brand-white;
+  margin-bottom: 20px;
+  text-align: center;
+  @media screen and (min-width: 1200px) {
+    text-align: start;
   }
 }
-.footer-social-media__icon {
+
+.footer-social__list {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-social__item {
+  cursor: pointer;
+}
+.footer-social__item + .footer-social__item {
+  margin-left: 10px;
+}
+
+.footer-social__link {
+  display: flex;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  align-items: center;
+  color: $brand-white;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    background-color: $brand-blue;
+  }
+}
+
+.footer-social__icon {
+  width: 20px;
+  height: 20px;
   fill: currentColor;
-  .footer-social-media__item:hover & {
-    fill: #ffffff;
+}
+
+///////////////// footer-input//////////////////
+
+.footer-input {
+}
+
+.footer-subscribe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  @media screen and (min-width: 1200px) {
+    flex-direction: row;
+  }
+}
+
+.footer-btn {
+  background-color: $brand-blue;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  color: $brand-white;
+  min-width: 200px;
+  border: 1px solid transparent;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 200px;
+  height: 50px;
+  padding: 10px 28px 10px 29px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &:hover,
+  &:focus {
+    background-color: $brand-btn;
+  }
+
+  &__svg {
+    fill: currentColor;
+    margin-left: 10px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-left: 12px;
+  }
+}
+
+.footer-subscribe__input--mail {
+  max-width: 450px;
+  height: 50px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background: #2f303a;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 16px;
+  color: $brand-white;
+  @media screen and (min-width: 767px) {
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 358px;
+    margin-bottom: 0;
   }
 }
